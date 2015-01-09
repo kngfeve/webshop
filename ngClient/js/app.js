@@ -1,9 +1,9 @@
 var myApp = angular.module('ngclient', ['ngRoute']);
  
-myApp.config(function($locationProvider, $routeProvider, $httpProvider) {
+myApp.config(function($routeProvider, $httpProvider) {
  
   $httpProvider.interceptors.push('TokenInterceptor');
-  $locationProvider.html5Mode(true);
+ 
   $routeProvider
     .when('/login', {
       templateUrl: 'partials/login.html',
