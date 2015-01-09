@@ -7,7 +7,7 @@ var app = express();
  
 app.use(logger('dev'));
 app.use(bodyParser.json());
- 
+
 app.all('/*', function(req, res, next) {
   // CORS headers
   res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
