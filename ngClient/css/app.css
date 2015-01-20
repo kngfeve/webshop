@@ -124,3 +124,9 @@ color: #ffffff;
 .addamount{
   width: 75px;
 }
+
+.hcart{
+  width: 350px;
+  padding: 10px 10px 0px 10px;
+  text-transform: none;
+}

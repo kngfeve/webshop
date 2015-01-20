@@ -24,11 +24,48 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" dropdown on-toggle="toggled(open)" ng-show="showMenu">
               <a href class="dropdown-toggle" dropdown-toggle>Cart [0]<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li ng-repeat="choice in items">
-                  <a href>{{choice}}</a>
-                </li>
-              </ul>
+                <ul class="dropdown-menu pull-right hcart">
+                    <li>
+                      <table class="table table-condensed">
+                        <tr>
+                          <td class="text-center">
+                            <a href="product.html">
+                              <img class="img-responsive img-thumbnail" src="http://image.eveonline.com/Type/583_32.png" >                              
+                            </a>
+                          </td>
+                          <td class="text-left">
+                            <a href="product-full.html">
+                              Bantam
+                            </a>
+                          </td>
+                          <td class="text-right">x1</td>
+                          <td class="text-right">999.999.999</td>
+                          <td class="text-left">ISK</td>
+                          <td class="text-center">
+                            <a href="#">
+                              <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </li>
+                    <li>
+                      <table class="table total">
+                          <tr>
+                            <td class="text-right"><strong>Total</strong></td>
+                            <td class="text-left">15.000.000 ISK</td>
+                          </tr>
+                      </table>
+                      <p class="text-right">
+                        <a href="cart.html"  class="btn btn-default" role="button">
+                          View Cart
+                        </a>
+                        <a href="#"  class="btn btn-primary" role="button">
+                          Checkout
+                        </a>
+                      </p>
+                    </li>                 
+                  </ul>
             </li>
             <li class="dropdown" dropdown on-toggle="toggled(open)" ng-show="showMenu">
               <a href class="dropdown-toggle" dropdown-toggle>Welcome, {{loggedUser}}!<span class="caret"></span></a>
