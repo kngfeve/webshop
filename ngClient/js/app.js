@@ -1,4 +1,4 @@
-var myApp = angular.module('ngclient', ['ngRoute']);
+var myApp = angular.module('ngclient', ['ngRoute', 'xeditable', 'ui.bootstrap']);
  
 myApp.config(function($routeProvider, $httpProvider) {
  
@@ -15,28 +15,34 @@ myApp.config(function($routeProvider, $httpProvider) {
       templateUrl: 'partials/home.html',
       controller: 'HomeCtrl',
       access: {
-        requiredLogin: true
+        requiredLogin: false
       }
     }).when('/page1', {
       templateUrl: 'partials/page1.html',
       controller: 'Page1Ctrl',
       access: {
-        requiredLogin: true
+        requiredLogin: false
       }
     }).when('/page2', {
       templateUrl: 'partials/page2.html',
       controller: 'Page2Ctrl',
       access: {
-        requiredLogin: true
+        requiredLogin: false
       }
     }).when('/page3', {
       templateUrl: 'partials/page3.html',
       controller: 'Page3Ctrl',
       access: {
+        requiredLogin: false
+      }
+    }).when('/page4', {
+      templateUrl: 'partials/page4.html',
+      controller: 'Page4Ctrl',
+      access: {
         requiredLogin: true
       }
     }).otherwise({
-      redirectTo: '/login'
+      redirectTo: '/'
     });
 });
  
@@ -56,6 +62,7 @@ myApp.run(function($rootScope, $window, $location, AuthenticationFactory) {
  
   $rootScope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
     $rootScope.showMenu = AuthenticationFactory.isLogged;
+    $rootScope.loggedUser = AuthenticationFactory.user;
     $rootScope.role = AuthenticationFactory.userRole;
     // if the user is already logged in, take him to the home page
     if (AuthenticationFactory.isLogged == true && $location.path() == '/login') {

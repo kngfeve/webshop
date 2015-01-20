@@ -1,22 +1,35 @@
 <div class="container" ng-controller="Page3Ctrl">
-  <div class="page-header">
-    <h3>List of products from the REST API
-      <code>/api/v1/products</code>
-    </h3>
-  </div>
- 
- 
-  <p class="lead">
-    <table class="table table-striped">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-      </tr>
-      <tr ng-repeat="p in products">
-        <td>{{p.id}}</td>
-        <td>{{p.name}}</td>
-      </tr>
-    </table>
-  </p>
- 
+  <div class="col-md-12">
+    <div class="page-header">
+      <h3>List of products from the REST API
+        <code>/api/v1/products</code>
+      </h3>
+    </div>     
+    <form ng-submit="addProduct()">
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>remove - Edit</th>
+        </tr>
+        <tr ng-repeat="p in products">
+          <td>{{$index}}-{{p.id}}</td>
+          <td>{{p.name}}</td>
+          <td>
+            <button class="btn" ng-click="deleteProduct(p._id, $index)">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button class="btn" ng-click="updateProduct(p._id, $index)">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+          </td>      
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" placeholder="ID" ng-model="id"></input></td>
+          <td><input type="text" class="form-control" placeholder="Name" ng-model="name"></input></td>
+          <td><button type="submit" class="btn btn-primary">Post</button></td>
+        </tr>      
+      </table>
+    </form>
+  </div> 
 </div>

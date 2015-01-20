@@ -1,45 +1,52 @@
+var mongoose = require('mongoose');
+var Data = mongoose.model('Data');
+
 var products = {
  
-  getAll: function(req, res) {
-    var allProducts = data; // Spoof a DB call
-    res.json(allProducts);
+  getAll: function(req, res, next) {
+    Data.find(function(err, allProducts){
+      if(err){ return next(err); }
+
+      res.json(allProducts);
+    });
   },
  
   getOne: function(req, res) {
     var id = req.params.id;
-    var product = data[0]; // Spoof a DB call
-    res.json(product);
+    console.log("get one by id " + id)
+    Data.findById(id, function(allProducts){
+      res.json(allProducts);
+    });    
   },
  
   create: function(req, res) {
-    var newProduct = req.body;
-    data.push(newProduct); // Spoof a DB call
-    res.json(newProduct);
+    var newProduct = new Data(req.body);
+    newProduct.save(function(err, newProduct){
+      if(err){ return next(err); }
+
+      res.json(newProduct);
+    });
   },
  
   update: function(req, res) {
-    var updateProduct = req.body;
     var id = req.params.id;
-    data[id] = updateProduct // Spoof a DB call
-    res.json(updateProduct);
+    var updateProduct = req.body;
+    var query = Data.findById(id);
+    console.log("update function " + id)  
+    Data.update({ _id: id }, { $set: updateProduct}, function(err, allProducts){
+      res.json(allProducts);
+    });    
   },
  
   delete: function(req, res) {
     var id = req.params.id;
-    data.splice(id, 1) // Spoof a DB call
-    res.json(true);
+    var query = Data.findById(id);  
+    console.log("delete function " + id)
+    query.remove(function(allProducts){
+      res.json(allProducts);
+    });
   }
 };
- 
-var data = [{
-  name: 'product 1',
-  id: '1'
-}, {
-  name: 'product 2',
-  id: '2'
-}, {
-  name: 'product 3',
-  id: '3'
-}];
+
  
 module.exports = products;

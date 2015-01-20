@@ -1,8 +1,13 @@
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://jdpnielsen:qw1hbmrh@proximus.modulusmongo.net:27017/yvI9papy');
+require('./models/data');
+
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
- 
+
 var app = express();
  
 app.use(logger('dev'));
@@ -20,7 +25,7 @@ app.all('/*', function(req, res, next) {
     next();
   }
 });
- 
+
 // Auth Middleware - This will check if the token is valid
 // Only the requests that start with /api/v1/* will be checked for the token.
 // Any URL's that do not follow the below pattern should be avoided unless you 

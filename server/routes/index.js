@@ -9,7 +9,7 @@ var user = require('./users.js');
  * Routes that can be accessed by any one
  */
 router.post('/login', auth.login);
- 
+
 /*
  * Routes that can be accessed only by autheticated users
  */
