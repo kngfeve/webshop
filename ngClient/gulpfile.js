@@ -8,7 +8,7 @@ var paths = {
 
 gulp.task('connect', function() {
   connect.server({
-    root: paths.app,
+    root: __dirname,
     livereload: true,
     port: 2772
   });
