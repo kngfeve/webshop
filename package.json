@@ -1,0 +1,19 @@
+{
+  "name": "kngfwebshop",
+  "version": "1.0.0",
+  "description": "webshop\r =======",
+  "main": "/server/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kngfeve/webshop.git"
+  },
+  "author": "Joshua Daniel Pratt Nielsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kngfeve/webshop/issues"
+  },
+  "homepage": "https://github.com/kngfeve/webshop"
+}
