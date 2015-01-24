@@ -6,6 +6,9 @@
   "scripts": {
     "test": "test"
   },
+    "engines": {
+    "npm": "2.1.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kngfeve/webshop.git"
