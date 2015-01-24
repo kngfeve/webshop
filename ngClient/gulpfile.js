@@ -2,7 +2,6 @@ var gulp = require('gulp'),
   connect = require('gulp-connect');
 
 var paths = {
-  app: './',
   src: ['./*.html', './partials/*.html', './css/*.css', './js/*.js']
 };
 

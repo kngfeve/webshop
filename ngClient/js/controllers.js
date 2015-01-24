@@ -135,7 +135,8 @@ myApp.controller("Page3Ctrl", ['$scope', 'dataFactory',
 
 myApp.controller('Page4Ctrl', function($scope, $filter, $http, dataFactory) {
   $scope.products = [];
-
+  $scope.sortReverse = false;
+  $scope.sortType = 'id';
   // Access the factory and get the latest products list
   dataFactory.getProducts().then(function(data) {
     $scope.products = data.data;

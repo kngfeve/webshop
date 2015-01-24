@@ -130,3 +130,13 @@ color: #ffffff;
   padding: 10px 10px 0px 10px;
   text-transform: none;
 }
+
+/* stops accidently selecting text on tableheads
+-------------------------------------------------- */
+
+th {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

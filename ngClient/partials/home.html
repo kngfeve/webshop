@@ -1,6 +1,14 @@
 <div ng-controller="HomeCtrl">
 <!--Navigation-->
   <div class="col-md-3 test">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+          <input type="text" class="form-control" placeholder="test" ng-model="myFilter">
+        </div>      
+      </div>
+    </form>
     <ul class="productmenu">   
       <li ng-repeat="category in categories">
         <a href class="" ng-click="isCollapsed = !isCollapsed">{{category.category}}<span class="caret pull-right"></span></a>

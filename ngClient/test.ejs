@@ -1,0 +1,173 @@
+/// stylish cart from http://ecommerceforest.com/wrap/shoppe-stores/spice-shoppe/index.html
+
+
+<div id="cart" class="btn-group btn-block" dropdown>
+  <button type="button" dropdown-toggle class="btn btn-block btn-lg dropdown-toggle">
+    <i class="fa fa-shopping-cart"></i>
+    <span class="hidden-md">Cart:</span> 
+    <span id="cart-total">2 item(s) - $340.00</span>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <ul class="dropdown-menu pull-right">
+    <li>
+      <table class="table hcart">
+        <tr>
+          <td class="text-center">
+            <a href="product.html">
+              <img src="images/product-images/hcart-thumb1.jpg" alt="image" title="image" class="img-thumbnail img-responsive" />
+            </a>
+          </td>
+          <td class="text-left">
+            <a href="product-full.html">
+              Seeds
+            </a>
+          </td>
+          <td class="text-right">x 1</td>
+          <td class="text-right">$120.68</td>
+          <td class="text-center">
+            <a href="#">
+              <i class="fa fa-times"></i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <a href="product.html">
+              <img src="images/product-images/hcart-thumb2.jpg" alt="image" title="image" class="img-thumbnail img-responsive" />
+            </a>
+          </td>
+          <td class="text-left">
+            <a href="product-full.html">
+              Organic
+            </a>
+          </td>
+          <td class="text-right">x 2</td>
+          <td class="text-right">$240.00</td>
+          <td class="text-center">
+            <a href="#">
+              <i class="fa fa-times"></i>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </li>
+    <li>
+      <table class="table table-bordered total">
+          <tr>
+            <td class="text-right"><strong>Total</strong></td>
+            <td class="text-left">$1,297.68</td>
+          </tr>
+      </table>
+      <p class="text-right btn-block1">
+        <a href="cart.html">
+          View Cart
+        </a>
+        <a href="#">
+          Checkout
+        </a>
+      </p>
+    </li>                 
+  </ul>
+</div>
+
+
+///////////////////////////////////////////////////////// 
+
+<div ng-controller="MyCtrl"> 
+  <h2>Responsive navbar</h2>
+  <p>To implement a collapsing responsive navbar, wrap your navbar content in a containing div, <code>.nav-collapse.collapse</code>, and add the navbar toggle button, <code>.btn-navbar</code>.  {{name}}</p> 
+  <div class="bs-docs-example">
+    <div class="navbar">
+      <div class="navbar-inner">
+         <div class="container">
+            <!-- Note: set the initial collapsed state and change it when clicking -->
+            <a ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" class="btn btn-navbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Title</a>
+               <!-- Note: use "collapse" here. The original "data-" settings are not needed anymore. -->
+               <div collapse="navCollapsed" class="nav-collapse collapse navbar-responsive-collapse">
+                  <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="navbar-search pull-left" action="">
+                    <input type="text" class="search-query span2" placeholder="Search">
+                  </form>
+                  <ul class="nav pull-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+               </div><!-- /.nav-collapse -->
+          </div> <!-- /.container -->
+     </div><!-- /navbar-inner -->
+   </div><!-- /navbar -->
+ </div> <!-- /bs-docs-example -->
+</div>
+
+
+/////////////////////////////////////////
+
+    <ul class="nav nav-pills  nav-stacked">
+      <li>test</li>
+      <!--Frigates-->
+      <li class="dropdown" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle" dropdown-toggle>Frigates<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-open-right">
+          <li ng-class="{active:isActive('/')}"><a href="#">Standard Frigates</a></li>
+          <li ng-class="{active:isActive('/')}"><a href="#">Advanced Frigates</a></li>
+        </ul>
+      </li>
+
+      <!--Cruisers-->
+      <li class="dropdown" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle" dropdown-toggle>Cruisers<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-open-right">
+          <li ng-class="{active:isActive('/')}"><a href="#">Standard Cruisers</a></li>
+          <li ng-class="{active:isActive('/')}"><a href="#">Advanced Cruisers</a></li>
+        </ul>
+      </li>
+
+      <!--BattleCruisers-->
+      <li class="dropdown" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle" dropdown-toggle>BattleCruisers<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-open-right">
+          <li ng-class="{active:isActive('/')}"><a href="#">Standard BattleCruisers</a></li>
+          <li ng-class="{active:isActive('/')}"><a href="#">Advanced BattleCruisers</a></li>
+        </ul>
+      </li>
+
+      <!--Battleships-->
+      <li class="dropdown" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle" dropdown-toggle>Battleships<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-open-right">
+          <li ng-class="{active:isActive('/')}"><a href="#">Standard Battleships</a></li>
+          <li ng-class="{active:isActive('/')}"><a href="#">Advanced Battleships</a></li>
+        </ul>
+      </li>        
+    </ul>
