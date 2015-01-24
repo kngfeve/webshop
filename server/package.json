@@ -1,10 +1,11 @@
 {
-  "name": "myRESTfulApp",
+  "name": "kngfwebshop",
   "version": "0.1.0",
   "description": "myRESTfulApp",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Arvind Ravulavaru",
   "license": "MIT",
@@ -14,5 +15,17 @@
     "jwt-simple": "^0.2.0",
     "mongoose": "^3.8.21",
     "morgan": "^1.3.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kngfeve/webshop"
+  },
+  "bugs": {
+    "url": "https://github.com/kngfeve/webshop/issues"
+  },
+  "homepage": "https://github.com/kngfeve/webshop"
+  "engines": {
+    "node": "0.10.x"
   }
 }
